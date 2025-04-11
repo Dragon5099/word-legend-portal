@@ -1,13 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from "react";
+import { ThemeProvider } from "../components/ThemeProvider";
+import Header from "../components/Header";
+import HeroSection from "../components/HeroSection";
+import Sidebar from "../components/Sidebar";
+import RecentPosts from "../components/RecentPosts";
+import ArticleContent from "../components/ArticleContent";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <ThemeProvider>
+      <div dir="rtl" className="min-h-screen">
+        <Header />
+        
+        {/* Hero Section */}
+        <HeroSection />
+        
+        {/* Main Content */}
+        <div className="container mx-auto px-4 py-12">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Sidebar */}
+            <Sidebar />
+            
+            {/* Main Content */}
+            <ArticleContent />
+            
+            {/* Right Sidebar */}
+            <RecentPosts />
+          </div>
+        </div>
+        
+        {/* Footer */}
+        <Footer />
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
